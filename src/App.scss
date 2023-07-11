@@ -1,0 +1,190 @@
+@import '~bootstrap/scss/bootstrap';
+
+:root {
+  --scissors-gradient: radial-gradient(
+    hsl(39, 89%, 49%),
+    hsl(40, 84%, 53%)
+  );
+  --paper-gradient: radial-gradient(
+    hsl(230, 89%, 62%),
+    hsl(230, 89%, 65%)
+  );
+  --rock-gradient: radial-gradient(
+    hsl(349, 71%, 52%),
+    hsl(349, 70%, 56%)
+  );
+  --lizard-gradient: radial-gradient(
+    hsl(261, 73%, 60%),
+    hsl(261, 72%, 63%)
+  );
+  --cyan-gradient: radial-gradient(
+    hsl(189, 59%, 53%),
+    hsl(189, 58%, 57%)
+  );
+  --dark-text: hsl(229, 25%, 31%);
+  --score-text: hsl(229, 64%, 46%);
+  --header-outline: hsl(217, 16%, 45%);
+  --radial-background: radial-gradient(
+    hsl(214, 47%, 23%),
+    hsl(237, 49%, 15%)
+  );
+  --background: hsl(237, 49%, 15%);
+}
+
+@font-face {
+  font-family: "Barlow Semi Condensed";
+  src: url(https://fonts.google.com/specimen/Barlow+Semi+Condensed);
+}
+
+body {
+  background: var(--background);
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 18px;
+  color: white;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid var(--header-outline);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+
+  .title {
+    font-weight: 700;
+  }
+
+  .score {
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: var(--score-text);
+
+    .score__title {
+      font-weight: 600;
+    }
+
+    .score__number {
+      font-size: 50px;
+      font-weight: 700;
+    }
+  }
+}
+
+.rock {
+  background-image: var(--rock-gradient);
+  box-shadow: 0px 4px 0px 0px hsl(347, 65%, 35%);
+  border-radius: 50%;
+  padding: 20px;
+  cursor: pointer;
+  position: relative;
+  top: 100px;
+}
+
+.img__rock {
+  background-color: #fff;
+  box-shadow: 0px -4px 0px 0px hsl(347, 65%, 35%);
+  border-radius: 50%;
+  padding: 20px;
+}
+
+.paper {
+  background-image: var(--paper-gradient);
+  box-shadow: 0px 4px 0px 0px hsl(230, 65%, 35%);
+  border-radius: 50%;
+  padding: 20px;
+  cursor: pointer;
+  position: relative;
+  top: -100px;
+
+
+}
+
+.img__paper {
+  background-color: #fff;
+  box-shadow: 0px -4px 0px 0px hsl(230, 65%, 35%);
+  border-radius: 50%;
+  padding: 20px;
+}
+
+.scissors {
+  background-image: var(--scissors-gradient);
+  box-shadow: 0px 4px 0px 0px hsl(39, 65%, 35%);
+  border-radius: 50%;
+  padding: 20px;
+  cursor: pointer;
+  position: relative;
+  top: -100px;
+
+
+}
+
+.img__scissors {
+  background-color: #fff;
+  box-shadow: 0px -4px 0px 0px hsl(39, 65%, 35%);
+  border-radius: 50%;
+  padding: 20px;
+}
+
+.stepOne {
+  display: flex;
+  flex-direction: column;
+  width: 750px;
+  .game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    background-image: url(./assets/images/bg-triangle.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 300px;
+    padding: 100px;
+
+  }
+  .result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .result__player {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px;
+    }
+    .result__house {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px;
+    }
+    .result__result {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px;
+    }
+  }
+  .rules {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px;
+    .rules__button {
+      background-color: var(--background);
+      border: 2px solid var(--header-outline);
+      padding: 10px 20px;
+      border-radius: 10px;
+      color: var(--dark-text);
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+}
