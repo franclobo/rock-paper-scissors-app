@@ -30,7 +30,7 @@ Users should be able to:
 
 | Desktop version | Mobile version |
 |---|---|
-| ![image](https://github.com/franclobo/rock-paper-scissors-app/assets/58642949/4be134bb-f870-4b82-8d80-1c582aadd6b1) | ![image](https://github.com/franclobo/rock-paper-scissors-app/assets/58642949/49750054-1834-4369-a5ab-daa9602e8846) |
+| ![image](https://github.com/franclobo/rock-paper-scissors-app/assets/58642949/4be134bb-f870-4b82-8d80-1c582aadd6b1) | ![image](https://github.com/franclobo/rock-paper-scissors-app/assets/58642949/dd58274b-0b9e-46b1-99c0-f10c1ab84128) |
 
 
 
