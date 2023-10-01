@@ -40,7 +40,7 @@ body {
   background: var(--background);
   font-family: "Barlow Semi Condensed", sans-serif;
   font-size: 18px;
-  color: white;
+  color: #fff;
   margin: 0;
   padding: 0;
   display: flex;
@@ -60,10 +60,13 @@ body {
 
   .title {
     font-weight: 700;
+    @media (max-width: 768px) {
+      font-size: 24px;
+    }
   }
 
   .score {
-    background-color: white;
+    background-color: #fff;
     padding: 10px 20px;
     border-radius: 10px;
     color: var(--score-text);
@@ -91,6 +94,10 @@ body {
   cursor: pointer;
   position: relative;
   top: 100px;
+  @media (max-width: 768px) {
+    width: 50%;
+    height: 50%;
+  }
 }
 
 .img__rock {
@@ -98,6 +105,11 @@ body {
   box-shadow: 0px -4px 0px 0px hsl(347, 65%, 35%);
   border-radius: 50%;
   padding: 20px;
+  @media (max-width: 768px) {
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+  }
 }
 
 .paper {
@@ -108,8 +120,11 @@ body {
   cursor: pointer;
   position: relative;
   top: -100px;
-
-
+  @media (max-width: 768px) {
+    width: 50%;
+    height: 50%;
+    top: -50px;
+  }
 }
 
 .img__paper {
@@ -117,6 +132,11 @@ body {
   box-shadow: 0px -4px 0px 0px hsl(230, 65%, 35%);
   border-radius: 50%;
   padding: 20px;
+  @media (max-width: 768px) {
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+  }
 }
 
 .scissors {
@@ -127,8 +147,11 @@ body {
   cursor: pointer;
   position: relative;
   top: -100px;
-
-
+  @media (max-width: 768px) {
+    width: 50%;
+    height: 50%;
+    top: -50px;
+  }
 }
 
 .img__scissors {
@@ -136,12 +159,20 @@ body {
   box-shadow: 0px -4px 0px 0px hsl(39, 65%, 35%);
   border-radius: 50%;
   padding: 20px;
+  @media (max-width: 768px) {
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+  }
 }
 
 .stepOne {
   display: flex;
   flex-direction: column;
   width: 750px;
+  @media (max-width: 768px) {
+    width: 100vw;
+  }
   .game {
     display: flex;
     justify-content: center;
@@ -152,12 +183,23 @@ body {
     background-position: center;
     background-size: 300px;
     padding: 100px;
+    @media (max-width: 768px) {
+      background-size: 150px;
+      padding: 80px;
+    }
 
   }
   .result {
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (max-width: 768px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      text-align: center;
+      margin-top: 100px;
+    }
     .result__player {
       display: flex;
       flex-direction: column;
@@ -169,12 +211,20 @@ body {
       flex-direction: column;
       align-items: center;
       margin: 20px;
+      @media (max-width: 768px) {
+        grid-column: 2;
+        grid-row: 1;
+      }
     }
     .result__result {
       display: flex;
       flex-direction: column;
       align-items: center;
       margin: 20px;
+      @media (max-width: 768px) {
+        grid-column: span 2;
+        grid-row: 2;
+      }
       .result__title {
         font-weight: 600;
         font-size: 24px;
@@ -195,6 +245,9 @@ body {
     display: flex;
     justify-content: flex-end;
     margin: 20px;
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
     .rules__button {
       background-color: var(--background);
       border: 2px solid var(--header-outline);
