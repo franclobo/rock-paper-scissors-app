@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Rock from "../assets/images/icon-rock.svg";
 import Paper from "../assets/images/icon-paper.svg";
 import Scissors from "../assets/images/icon-scissors.svg";
+import Rules from "../assets/images/image-rules.svg";
+import { AiOutlineClose } from "react-icons/ai";
 
 function StepOne() {
   const [playerChoice, setPlayerChoice] = useState("");
@@ -9,8 +11,8 @@ function StepOne() {
   const [result, setResult] = useState("");
   const [score, setScore] = useState(0);
 
-  const handlePlayerChoice = (e) => {
-    setPlayerChoice(e.target.id);
+  const handlePlayerChoice = (choice) => {
+    setPlayerChoice(choice);
   };
 
   const getHouseChoice = () => {
@@ -23,7 +25,18 @@ function StepOne() {
     setPlayerChoice("");
     setHouseChoice("");
     setResult("");
+    setScore(0);
   };
+
+  const handleRules = () => {
+    const rules = document.querySelector(".img__rules");
+    rules.classList.toggle("hidden");
+  }
+
+  const handleCloseRules = () => {
+    const rules = document.querySelector(".img__rules");
+    rules.classList.add("hidden");
+  }
 
   useEffect(() => {
     setHouseChoice(getHouseChoice());
@@ -47,6 +60,7 @@ function StepOne() {
         setScore((prevScore) => prevScore - 1);
       } else {
         setResult("DRAW");
+        setScore((prevScore) => prevScore + 0);
       }
     }
   }, [playerChoice, houseChoice]);
@@ -74,14 +88,29 @@ function StepOne() {
         </div>
       </div>
       <ul className="game">
-        <li className="paper" id="paper" onClick={handlePlayerChoice}>
-          <img className="img__paper" src={Paper} alt="Paper" />
+        <li className="paper" id="paper">
+          <img
+            className="img__paper"
+            src={Paper}
+            alt="Paper"
+            onClick={() => handlePlayerChoice("paper")}
+          />
         </li>
-        <li className="rock" id="rock" onClick={handlePlayerChoice}>
-          <img className="img__rock" src={Rock} alt="Rock" />
+        <li className="rock" id="rock">
+          <img
+            className="img__rock"
+            src={Rock}
+            alt="Rock"
+            onClick={() => handlePlayerChoice("rock")}
+          />
         </li>
-        <li className="scissors" id="scissors" onClick={handlePlayerChoice}>
-          <img className="img__scissors" src={Scissors} alt="Scissors" />
+        <li className="scissors" id="scissors">
+          <img
+            className="img__scissors"
+            src={Scissors}
+            alt="Scissors"
+            onClick={() => handlePlayerChoice("scissors")}
+          />
         </li>
       </ul>
       <div className="result">
@@ -108,20 +137,27 @@ function StepOne() {
         <div className="result__house">
           <p className="result__title">THE HOUSE PICKED</p>
           <div className="result__house__choice">
-            {houseChoice === "rock" && (
+            {houseChoice === "rock" ? (
               <img className="img__rock" src={Rock} alt="Rock" />
-            )}
-            {houseChoice === "paper" && (
+            ) : houseChoice === "paper" ? (
               <img className="img__paper" src={Paper} alt="Paper" />
-            )}
-            {houseChoice === "scissors" && (
+            ) : houseChoice === "scissors" ? (
               <img className="img__scissors" src={Scissors} alt="Scissors" />
-            )}
+            ) : null}
           </div>
         </div>
       </div>
       <div className="rules">
-        <button className="rules__button">RULES</button>
+        <button className="rules__button" onClick={handleRules}>
+          RULES
+        </button>
+      </div>
+      <div className="img__rules hidden">
+        <div className="rules__header">
+          <h1 className="rules__title">RULES</h1>
+          <AiOutlineClose className="rules__close" onClick={handleCloseRules} />
+        </div>
+        <img className="rules__img" src={Rules} alt="Rules" />
       </div>
     </section>
   );

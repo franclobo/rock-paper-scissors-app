@@ -67,6 +67,10 @@ body {
     padding: 10px 20px;
     border-radius: 10px;
     color: var(--score-text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
     .score__title {
       font-weight: 600;
@@ -171,6 +175,20 @@ body {
       flex-direction: column;
       align-items: center;
       margin: 20px;
+      .result__title {
+        font-weight: 600;
+        font-size: 24px;
+        color: #fff;
+      }
+      .result__button {
+        background-color: #fff;
+        border: 2px solid var(--header-outline);
+        padding: 10px 20px;
+        border-radius: 10px;
+        color: var(--dark-text);
+        font-weight: 600;
+        cursor: pointer;
+      }
     }
   }
   .rules {
@@ -186,5 +204,37 @@ body {
       font-weight: 600;
       cursor: pointer;
     }
+  }
+  .img__rules {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    z-index: 1;
+    padding: 50px;
+    border-radius: 10px;
+    .rules__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      .rules__title {
+        font-weight: 700;
+        font-size: 24px;
+        color: #141414;
+      }
+      .rules__close {
+        cursor: pointer;
+        color: #141414;
+      }
+    }
+  }
+  .hidden {
+    display: none;
   }
 }
